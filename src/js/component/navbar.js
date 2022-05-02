@@ -28,7 +28,7 @@ export const Navbar = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdownn
+                    Dropdown
                   </a>
                   <ul
                     className="dropdown-menu"
