@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Info } from "./component/info";
 import { Modal } from "./component/modal";
 
-const FormatoInfo = ({data=[], img, name, setFavorite, favorite}) => {
+const FormatoInfoPlanets = ({data=[], img, name, setFavorite, favorite}) => {
 
     const [info, setInfo] = useState([]);
 
@@ -28,4 +28,4 @@ const FormatoInfo = ({data=[], img, name, setFavorite, favorite}) => {
     )
 }
 
-export default FormatoInfo
+export default FormatoInfoPlanets

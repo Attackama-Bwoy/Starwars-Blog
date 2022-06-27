@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({favorite, setFavorite}) => {
+
   return (
     <>
       <div className="sticky-top">
-        <nav class="navBar1 navbar navbar-expand-lg navbar-light bg-light ">
-          <div class="container-fluid ">
+        <nav className="navBar1 navbar navbar-expand-lg navbar-light bg-light ">
+          <div className="container-fluid ">
             <div className="col-1"></div>
             <Link className="col-10 text-center" to="/">
               <img
                 className="logoNavBar"
-                src="http://assets.stickpng.com/images/602175e40ad3230004b93c20.png"
+                src="https://1000marcas.net/wp-content/uploads/2019/12/logo-StarWars.png"
               />
             </Link>
             <div
@@ -28,30 +29,15 @@ export const Navbar = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Favorites
                   </a>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
+                    {favorite.map((item, index) => (
+                    <li key={index} className="dropdown-item">{item}</li>
+                  ))}
                   </ul>
                 </li>
               </ul>

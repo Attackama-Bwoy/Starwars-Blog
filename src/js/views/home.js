@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/home.css";
 
 export const Home = () => {
+
   return (
     <div className="carouselContainer container-fluid home">
       <div

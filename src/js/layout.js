@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Context } from "./store/appContext";
@@ -14,6 +14,7 @@ import { Vehicles } from "./views/vehicles";
 
 //create your first component
 const Layout = () => {
+	const [favorite, setFavorite] = useState([])
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
@@ -22,13 +23,13 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbar favorite={favorite} setFavorite={setFavorite}/>
 					<Switch>
 							<Route exact path="/">
 								<Home />
 							</Route>
 							<Route exact path="/characters">
-								<Characters />
+								<Characters favorite={favorite} setFavorite={setFavorite}/>
 							</Route>
 							<Route exact path="/planets">
 								<Planets />
